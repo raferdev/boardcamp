@@ -1,8 +1,8 @@
 import express from "express";
-import getRootController from "../controllers/root/getRootController.js";
+import getRootCtlr from "../controllers/root/getRootCtlr.js";
 
 const rootRouter = express.Router();
 
-rootRouter.get("/", getRootController);
+rootRouter.get("/", getRootCtlr);
 
 export default rootRouter;
