@@ -13,7 +13,9 @@ async function getCustomersIdCtlr(req,res) {
     );
 
     const customer = queryCustomer.rows;
-    
+    if(!customer[0]) {
+      return res.sendStatus(404)
+    }
     res.send(customer);
   } catch (e) {
     console.log(e)
