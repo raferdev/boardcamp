@@ -25,8 +25,8 @@ async function rentalsPostCheckMdw(req,res,next) {
             return res.sendStatus(400);
         } else {
             req.pricePerDay = game[0].pricePerDay;
+            req.stockTotal = game[0].stockTotal;
         }
-        
 
     } catch(e) {
     res.sendStatus(500)
