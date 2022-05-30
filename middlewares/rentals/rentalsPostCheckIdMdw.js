@@ -1,4 +1,4 @@
-import db from "../db/db.js";
+import db from "../../db/db.js";
 
 async function rentalsPostCheckIdMdw (req,res,next) {
 

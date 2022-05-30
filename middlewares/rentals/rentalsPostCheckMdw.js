@@ -1,4 +1,4 @@
-import db from "../db/db.js";
+import db from "../../db/db.js";
 
 async function rentalsPostCheckMdw(req,res,next) {
     const { customerId, gameId } = req.body;
