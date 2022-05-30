@@ -2,7 +2,9 @@ import db from "../../db/db.js";
 
 
 async function getRentalsCtlr(req,res) {
+
     const rentals = [];
+    
    try {
     const queryRentals = await db.query(`
     SELECT json_build_object(
@@ -18,7 +20,7 @@ async function getRentalsCtlr(req,res) {
         'game', json_build_object('id', games.id, 'name', games.name, 'categoryId' ,games."categoryId",'categoryName', categories.name)
     ) FROM rentals JOIN customers ON "customerId" = customers.id JOIN games ON "gameId" = games.id JOIN categories ON "categoryId" = categories.id;   
     `);
-    
+
     const rentalsKeys = queryRentals.rows;
 
     rentalsKeys.forEach(key => {
