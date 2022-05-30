@@ -1,7 +1,19 @@
+import db from "../../db/db.js"
 
-function postCategoriesCtlr(req,res) {
+async function postCategoriesCtlr(req,res) {
+    const name = req.body.name;
+    try {
+    const categories = await db.query(`
 
-res.sendStatus(201);
+    INSERT INTO categories (name) VALUES ($1);
+
+    `,[name]);
+
+    res.sendStatus(201);
+    } catch(e) {
+        console.log(e)
+    res.sendStatus(500);  
+    }
 }
 
 export default postCategoriesCtlr;
