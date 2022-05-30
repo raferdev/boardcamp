@@ -5,7 +5,7 @@ async function getCategoriesCtlr(req,res) {
     try {
         const queryCategories = await db.query(`
     
-        SELECT (name) FROM categories;
+        SELECT * FROM categories;
     
         `);
         const categories = queryCategories.rows

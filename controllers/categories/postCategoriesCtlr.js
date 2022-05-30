@@ -3,7 +3,8 @@ import db from "../../db/db.js"
 async function postCategoriesCtlr(req,res) {
     const name = req.body.name;
     try {
-    const categories = await db.query(`
+        
+    await db.query(`
 
     INSERT INTO categories (name) VALUES ($1);
 
