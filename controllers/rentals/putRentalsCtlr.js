@@ -1,3 +1,4 @@
+
 function putRentalsCtlr(req,res) {
     res.sendStatus(201);
 }
