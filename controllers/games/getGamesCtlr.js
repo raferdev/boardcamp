@@ -1,6 +1,21 @@
-function getGamesCtlr(req,res) {
+import db from "../../db/db.js"
 
-    res.sendStatus(201);
+async function getGamesCtlr(req,res) {
+
+    try {
+        const queryGames = await db.query(`
+
+        SELECT games.*, categories.name as "categoryName" FROM games JOIN categories ON "categoryId" = categories.id;        
+        
+        `);
+
+        const games = queryGames.rows;
+
+        res.send(games);
+
+    } catch(e) {
+        res.sendStatus(500);
+    }
 
 }
 
